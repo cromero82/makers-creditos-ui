@@ -1,3 +1,46 @@
 # El ignore global descarta *.md. Este repo los admite.
 !*.md
 !**/*.md
+
+# Compilado
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Dependencias
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# Caché de Angular
+/.angular/cache
+.sass-cache/
+
+# Pruebas y cobertura
+/coverage
+testem.log
+
+# Entorno local
+.env
+.env.*
+!.env.example
+
+# Editores
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.history/*
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Sistema
+.DS_Store
+Thumbs.db
