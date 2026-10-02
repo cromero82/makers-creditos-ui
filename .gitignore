@@ -1,0 +1,3 @@
+# El ignore global descarta *.md. Este repo los admite.
+!*.md
+!**/*.md
