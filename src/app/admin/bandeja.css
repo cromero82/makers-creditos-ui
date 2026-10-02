@@ -1,0 +1,28 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+button {
+  margin-right: 8px;
+  border: 0;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background: #15803d;
+  color: #fff;
+  cursor: pointer;
+}
+
+.rechazo {
+  background: #b91c1c;
+}
+
+.error {
+  color: #b91c1c;
+}

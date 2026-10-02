@@ -1,0 +1,39 @@
+<section>
+  <h1>Bandeja de préstamos</h1>
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+  @if (filas().length === 0) {
+    <p>No hay solicitudes.</p>
+  } @else {
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Solicitante</th>
+          <th>Monto</th>
+          <th>Plazo</th>
+          <th>Estado</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (fila of filas(); track fila.id) {
+          <tr>
+            <td>{{ fila.creadoEn | fecha }}</td>
+            <td>{{ fila.email }}</td>
+            <td>{{ fila.monto | moneda }}</td>
+            <td>{{ fila.plazoMeses }} meses</td>
+            <td>{{ fila.estado }}</td>
+            <td>
+              @if (fila.estado === 'PENDIENTE') {
+                <button type="button" (click)="resolver(fila.id, 'APROBADO')">Aprobar</button>
+                <button type="button" class="rechazo" (click)="resolver(fila.id, 'RECHAZADO')">Rechazar</button>
+              }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</section>

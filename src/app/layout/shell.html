@@ -1,0 +1,17 @@
+<div class="shell">
+  <header>
+    <strong>Préstamos</strong>
+    <button type="button" (click)="auth.logout()">Salir</button>
+  </header>
+  <div class="cuerpo">
+    <aside>
+      <a routerLink="/prestamos" routerLinkActive="activo">Mis préstamos</a>
+      <a routerLink="/prestamos/nuevo" routerLinkActive="activo">Nueva solicitud</a>
+      <a *appRol="'ADMIN'" routerLink="/admin" routerLinkActive="activo">Bandeja admin</a>
+    </aside>
+    <main>
+      <router-outlet />
+    </main>
+  </div>
+  <footer>Sesión {{ auth.emailOfuscado() }} · {{ auth.rol() }}</footer>
+</div>

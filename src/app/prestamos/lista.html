@@ -1,0 +1,29 @@
+<section>
+  <h1>Mis préstamos</h1>
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  } @else if (filas().length === 0) {
+    <p>Aún no tienes solicitudes.</p>
+  } @else {
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Monto</th>
+          <th>Plazo</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (fila of filas(); track fila.id) {
+          <tr>
+            <td>{{ fila.creadoEn | fecha }}</td>
+            <td>{{ fila.monto | moneda }}</td>
+            <td>{{ fila.plazoMeses }} meses</td>
+            <td>{{ fila.estado }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</section>
